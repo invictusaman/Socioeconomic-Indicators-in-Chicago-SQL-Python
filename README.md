@@ -39,13 +39,13 @@ A detailed description of the dataset can be found on [the city of Chicago's web
 
 #### Problem 1 - How many rows are in the dataset?
 
-```
+```sql
 %sql SELECT COUNT(*) AS TOTAL_ROWS FROM chicago_socioeconomic_data;
 ```
 
 #### Problem 2 - How many community areas in Chicago have a hardship index greater than 50.0?
 
-```
+```sql
 %%sql
 
 SELECT COUNT(community_area_name) AS COMMUNITY_AREAS_WITH_BETTER_HARDSHIP_INDEX
@@ -55,7 +55,7 @@ WHERE hardship_index > 50.0;
 
 #### Problem 3 - What is the maximum value of hardship index in this dataset?
 
-```
+```sql
 %%sql
 
 SELECT MAX(hardship_index) AS MAX_HARDSHIP_INDEX
@@ -64,7 +64,7 @@ FROM chicago_socioeconomic_data;
 
 #### Problem 4 - Which community area which has the highest hardship index?
 
-```
+```sql
 %%sql
 
 SELECT community_area_name AS COMMUNITY_WITH_HIGHEST_INDEX
@@ -75,7 +75,7 @@ LIMIT 1;
 
 #### Problem 5 - Which Chicago community areas have per-capita incomes greater than $60,000?
 
-```
+```sql
 %%sql
 
 SELECT community_area_name AS COMMUNITY_WITH_PCI_GT_$60000
@@ -85,7 +85,7 @@ WHERE per_capita_income_ > 60000;
 
 #### Problem 6 - Create a scatter plot using the variables `per_capita_income_` and `hardship_index`. Explain the correlation between the two variables.
 
-```
+```python
 import matplotlib.pyplot as plt
 %matplotlib inline
 import seaborn as sns
